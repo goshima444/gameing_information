@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  namespace :admin do
+    get 'tags/edit'
+    get 'tags/index'
+  end
   namespace :public do
     get 'customers/edit'
     get 'customers/quit'
