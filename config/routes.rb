@@ -1,12 +1,9 @@
 Rails.application.routes.draw do
 
+
   namespace :admin do
-    get 'tags/edit'
-    get 'tags/index'
-  end
-  namespace :public do
     get 'customers/edit'
-    get 'customers/quit'
+    get 'customers/index'
     get 'customers/show'
   end
 # 顧客用
@@ -28,7 +25,10 @@ devise_for :admin, skip: [:registrations, :passwords] ,controllers: {
         get 'about' => 'home#about'
         get "search" => "searches#search"
 
-      resources :items, only: [:index, :show]
+    resources :post_images, only: [:new, :create, :index, :show, :destroy] do
+    resource :favorites, only: [:create, :destroy]
+    resources :post_comments, only: [:create, :destroy]
+  end
 
         get 'customers/my_page' => 'customers#show'                          #顧客のマイページ.
         get 'customers/information/edit' => 'customers#edit'                 #顧客の登録情報編集画面.
