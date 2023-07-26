@@ -9,8 +9,8 @@ class PostImage < ApplicationRecord
       validates :shop_name, presence: true
       validates :image, presence: true
 
-    def favorited_by?(user)
-    favorites.exists?(user_id: user.id)
+    def favorited_by?(customer)
+    favorites.exists?(customer_id: customer.id)
     end
 
 
