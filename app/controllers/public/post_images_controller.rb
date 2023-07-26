@@ -5,7 +5,7 @@ class Public::PostImagesController < ApplicationController
 
    # 投稿データの保存
   def create
-     @post_image = PostImage.new(post_image_params)
+    @post_image = PostImage.new(post_image_params)
     @post_image.customer_id = current_customer.id
     if @post_image.save
       redirect_to post_images_path

@@ -5,7 +5,7 @@ class Admin::TagsController < ApplicationController
   end
 
   def create
-    @tag = Tag.new(genre_params)
+    @tag = Tag.new(tag_params)
     @tag.save
     redirect_to admin_tags_path
   end
