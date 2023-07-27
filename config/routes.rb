@@ -42,7 +42,7 @@ devise_scope :user do
 
 # 管理者用.
       namespace :admin do
-        get '/' => "homes#top"
+        get '/' => "home#top"
 
       resources :tags, only: [:index, :create, :edit, :update]
       resources :customers, only:  [:index, :show, :edit, :update]
