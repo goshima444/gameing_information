@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row no-gutters">
     <div class="col-md-5 col-sm-10 mx-2 mx-sm-auto shadow-lg rounded px-0 my-5">
-      <h5 class="text-dark bg-light p-4 mb-0">画像投稿フォーム</h5>
+      <h5 class="text-dark bg-light p-4 mb-0">新規投稿フォーム</h5>
       <div class="form-body p-4">
         <% if @post_image.errors.any? %>
           <ul class="alert alert-danger" role="alert">
@@ -23,7 +23,7 @@
 
           </div>
           <%= f.select :tag_id, options_from_collection_for_select(Tag.all, :id, :name), placeholder:"タグ名" %>
-          <%= f.text_area :caption, class:"form-control", rows:"3", placeholder:"コメントここに" %>
+          <%= f.text_area :caption, class:"form-control", rows:"3", placeholder:"説明ここに" %>
           <hr>
           <%= f.submit '投稿', class:"btn btn-lg btn-block btn-info mt-4" %>
         <% end %>
